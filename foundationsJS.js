@@ -1,4 +1,23 @@
-  // not sure why doesn't work
+
+// MDN Git Learning Area 
+  // https://github.com/mdn/learning-area
+
+/* 
+// https://developer.mozilla.org/en-US/docs/Web/API/Document
+// alert(document.body.id);
+// create a new body element
+const newDocBody = document.createElement('body');
+// append a new id attribute to the new body element
+newDocBody.id = 'new-site-body-id';
+// assign new body element to the document body API
+document.body = newDocBody;
+// call new document body id in alert 
+  // works but creates an error
+// console.log(document.body.id);
+*/
+
+// not sure why doesn't work
+  // maybe bc there's no element being selected to append it to? 
   document.body.onload = addElement;
   function addElement() {
     // create a new element
@@ -22,7 +41,7 @@ console.log(browserType[browserType.length - 1]);
 console.log('substring index position: ', browserType.indexOf('vanilla'));
 
 // square bracket notation returns any char inside a string
-console.log(browserType[3]);
+console.log('browserType square bracket notation:', browserType[3]);
 
 // https://techstacker.com/display-javascript-objects-in-html/ 
 // XSS problem: https://stackoverflow.com/questions/1358810/how-do-i-change-the-text-of-a-span-element-using-javascript/1358815#1358815
