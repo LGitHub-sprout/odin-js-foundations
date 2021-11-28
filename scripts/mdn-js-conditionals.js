@@ -12,6 +12,8 @@ const weatherOutput = document.querySelector('.weather-output');
 selectWeather.onchange = setWeather;
 
 function setWeather() {
+  // get select element's value
+  // https://developer.mozilla.org/en-US/docs/Web/API/HTMLOptionElement
   let choice = selectWeather.value;
 
   if (choice === '') {
@@ -33,26 +35,29 @@ function setWeather() {
   Gratefully borrowed function from
   https://thisinterestsme.com/change-select-option-javascript/
 */
-function select(selectId, optionValToSelect) {
+function resetOption(selectId, optionValToSelect) {
   // Get the select element by it's unique ID.
   const selectElement = document.getElementById('weatherOption');
-  // Get the options.
+  // Get the options (hint: from the select element).
+  // https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/options
   const selectOptions = selectElement.options;
-  console.log(selectOptions);
-  // my description: loop thru the INDEXED options array
-  // Loop through these options using a for loop.
+
+  // my description: loop thru the (hint: INDEXED) options array
   // create opt var; set j counter to 0; set opt counter to ; increment
+  // Loop through these options using a for loop.
   for (let opt, j = 0; opt = selectOptions[j]; j++) {
-    console.log(selectOptions);
+    // hint: square bracket notation returns specific indexed value
+    console.log(selectOptions[3]);
     // If the option of value is equal to the option we want to select.
     if (opt.value == optionValToSelect) {
       // Select the option and break out of the for loop.
+      // https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/selectedIndex 
       selectElement.selectedIndex = j;
       break;
     }
   }
 }
-select('weatherOption', 'default');
+resetOption('weatherOption', 'default');
 
 
 // https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onchange
