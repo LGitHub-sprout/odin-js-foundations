@@ -15,6 +15,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="styles/global.css">
+
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="icon" href="favicon.ico">
     <link rel="icon" href="android-chrome-192x192.png">
@@ -51,8 +53,28 @@
         <h1 class="site-title">MDN JavaScript Conditionals</h1>
       </header>
       <main id="main-content">
-        <h2 class="weather-title">Choose Your Weather</h2>
+        <h2 class="weather-title">Choose Your Weather App</h2>
         <div class="container">
+          <p>This is a small <strong>JavaScript</strong> algorithm that appends text to a paragraph based on what the user selects from a dropdown selection of options &mdash; in this case a user's current weather.</p>
+          <p>The dropdown is created using a <code>select</code> element which contains a number of options for the user to select. Each <code>option</code> is an HTML child of the <code>select</code> element.</p>
+          <p>When the user makes a selection, a short custom <strong>function</strong> calls several Javascript <a href="https://developer.mozilla.org/en-US/docs/Web/API">Web APIs</a> to display its corresponding text in a paragraph directly below it.</p>
+          <p>To start building the function we'll use the <strong>Web APIs</strong> <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document">Document</a>
+          interface which, according to Mozilla's website, <q cite="https://developer.mozilla.org/en-US/docs/Web/API/Document">serves as an entry point into the web page's content</q> in order to save the <code>select</code> and <code>p</code> elements as variables. This API provides many <strong>methods</strong> such as <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document"><code>getElementByID</code></a> </p>
+
+<pre>
+  <code>
+  &lt;select name="weatherOption" id="weatherOption"&gt;
+    &lt;option value="default" selected&gt; -- Select your weather -- &lt;/option&gt;
+    &lt;option value="sunny"&gt;Sunny&lt;/option&gt;
+    &lt;option value="rainy"&gt;Rainy&lt;/option&gt;
+    &lt;option value="snowy"&gt;Snowy&lt;/option&gt;
+    &lt;option value="overcast"&gt;Overcast&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;p class="weather-output"&gt;Step outside or look out the window and select your location&apos;s weather.&lt;/p&gt;
+  </code>
+</pre>
+          
           <label for="weatherOption">Select today's weather: </label>
           <select name="weatherOption" id="weatherOption">
             <option value="default" selected>-- Select your weather --</option>

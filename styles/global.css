@@ -1,0 +1,19 @@
+body {
+  /* line-height: 18px; */
+  /* background-color: red; */
+}
+pre code {
+  display: block;
+  white-space: pre;
+  overflow-x: scroll;
+  background-color: pink;
+}
+p {
+  line-height: 24px;
+}
+p code {
+  background-color: #ddd;
+  padding: 2px;
+  font-size: 16px;
+  border-radius: 2px;
+}

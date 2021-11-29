@@ -9,6 +9,7 @@
 const selectWeather = document.querySelector('#weatherOption');
 const weatherOutput = document.querySelector('.weather-output');
 
+// https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onchange#javascript
 selectWeather.onchange = setWeather;
 
 function setWeather() {
@@ -34,21 +35,22 @@ function setWeather() {
 /*
   Gratefully borrowed function from
   https://thisinterestsme.com/change-select-option-javascript/
+  Resets select default option on refresh.
 */
 function resetOption(selectId, optionValToSelect) {
   // Get the select element by it's unique ID.
   const selectElement = document.getElementById('weatherOption');
-  // Get the options (hint: from the select element).
+  // Get the options (from the select element).
   // https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/options
   const selectOptions = selectElement.options;
 
-  // my description: loop thru the (hint: INDEXED) options array
-  // create opt var; set j counter to 0; set opt counter to ; increment
-  // Loop through these options using a for loop.
+  // my description: loop thru an (indexed) options array
+  // create opt var; set j counter to 0; set 'opt' counter to the selectOptions; increment j
+  // Loop through these (indexed) options using a for loop.
+  // (square bracket notation returns specific indexed value)
   for (let opt, j = 0; opt = selectOptions[j]; j++) {
-    // hint: square bracket notation returns specific indexed value
     console.log(selectOptions[3]);
-    // If the option of value is equal to the option we want to select.
+    // If the value of the option (being looped thru) is equal to the option we want to select (pass into the function) then use that and break out of the loop.
     if (opt.value == optionValToSelect) {
       // Select the option and break out of the for loop.
       // https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/selectedIndex 
